@@ -1,0 +1,12 @@
+{application, fizzbuzz,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, {fizzbuzz_app, []}},
+  {env, []}
+ ]}.
