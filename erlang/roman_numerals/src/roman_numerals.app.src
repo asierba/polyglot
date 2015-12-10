@@ -1,0 +1,12 @@
+{application, roman_numerals,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, {roman_numerals_app, []}},
+  {env, []}
+ ]}.

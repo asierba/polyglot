@@ -7,7 +7,7 @@ I am trying to solve [fizzbuzz](http://codingdojo.org/cgi-bin/index.pl?KataFizzB
 Languages
 - [X] Ruby
 - [X] Python
-- [ ] Erlang
+- [X] Erlang
 - [ ] Elixir
 - [ ] Clojure
 - [ ] Lisp
