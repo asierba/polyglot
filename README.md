@@ -8,7 +8,8 @@ Languages
 - [X] Ruby
 - [X] Python
 - [X] Erlang
-- [ ] Elixir
+- [X] Elixir
+- [ ] C#
 - [ ] Clojure
 - [ ] Lisp
 - [ ] Javascript
@@ -18,7 +19,6 @@ Languages
 - [ ] Scala
 - [ ] C++
 - [ ] Java
-- [ ] C#
 - [ ] F#
 - [ ] Haskell
 - [ ] Io
