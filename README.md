@@ -9,7 +9,7 @@ Languages
 - [X] Python
 - [X] Erlang
 - [X] Elixir
-- [ ] C#
+- [X] C#
 - [ ] Clojure
 - [ ] Lisp
 - [ ] Javascript
