@@ -10,16 +10,16 @@ Languages
 - [X] Erlang
 - [X] Elixir
 - [X] C#
-- [ ] Clojure
-- [ ] Lisp
+- [X] F#
 - [ ] Javascript
 - [ ] Coffeescript
-- [ ] Typescript
+- [X] Typescript
+- [ ] Clojure
+- [ ] Lisp
 - [ ] PHP
 - [ ] Scala
 - [ ] C++
 - [ ] Java
-- [ ] F#
 - [ ] Haskell
 - [ ] Io
 - [ ] Prolog
