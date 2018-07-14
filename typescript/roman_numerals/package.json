@@ -1,0 +1,26 @@
+{
+  "name": "fizzbuzz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --lib ES6 spec/*.ts && tsc --lib ES6 src/*.ts",
+    "prestart": "npm run build",
+    "start": "node src/index.js",
+    "pretest": "npm run build",
+    "test": "jasmine",
+    "test:watch": "nodemon --watch **/*.spec.ts --exec npm test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^10.5.2",
+    "jasmine": "^3.1.0",
+    "nodemon": "^1.17.5",
+    "typescript": "^2.9.2"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.8.8"
+  }
+}
