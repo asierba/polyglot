@@ -1,59 +1,4 @@
-
-class ArabicRomanPair {
-    public arabic: number;
-    public roman: string;
-
-    constructor(pair:Array<any>) {
-        this.arabic = pair[0];
-        this.roman = pair[1];
-    }
-}
-
-class ArabicToRomanDictionary {
-    private defaultItems = new Map<number, string>([
-        [1000, 'M'],
-        [500, 'D'],
-        [400, 'CD'],
-        [100, 'C'],
-        [90, 'XC'],
-        [50, 'L'],
-        [40, 'XL'],
-        [10, 'X'],
-        [9, 'IX'],
-        [5, 'V'],
-        [4, 'IV'],
-        [1, 'I']
-    ]);
-
-    private items: Map<number, string>;
-
-    constructor(items: Map<number, string> = null) {
-        this.items = items === null ? this.defaultItems : items;
-    }
-
-    getFirst() : ArabicRomanPair {
-        const value = this.items.entries().next().value;
-        return new ArabicRomanPair(value);
-    }
-
-    removeFirst() : ArabicToRomanDictionary {
-        const newItems = new Map(Array.from(this.items.entries()).splice(1));
-        return new ArabicToRomanDictionary(newItems);
-    }
-}
-
-
-function roman_of(arabic:number, dictionary = new ArabicToRomanDictionary()) : string {
-    if (arabic <= 0)
-        return '';
-
-    const { arabic: currentArabic, roman: currentRoman} = dictionary.getFirst();
-    if (arabic >= currentArabic) {
-        return currentRoman + roman_of(arabic-currentArabic);
-    }
-
-    return roman_of(arabic, dictionary.removeFirst());
-}
+import {roman_of} from "../src/roman";
 
 describe("Roman of", () => {
     [
@@ -80,7 +25,7 @@ describe("Roman of", () => {
         {arabic: 1000, roman: 'M' },
         {arabic: 3888, roman: 'MMMDCCCLXXXVIII' },
     ].forEach(data => {
-    it(`${data.arabic} should be ${data.roman}`, () => {
-        expect(roman_of(data.arabic)).toBe(data.roman);
-    })});
+        it(`${data.arabic} should be ${data.roman}`, () => {
+            expect(roman_of(data.arabic)).toBe(data.roman);
+        })});
 });
