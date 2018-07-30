@@ -2,18 +2,10 @@
   (:require [clojure.test :refer :all]
             [roman-numerals.core :refer :all]))
 
-(deftest a-test
-  (testing "Roman of 0 is ''"
-           (is (= (roman-of 0) ""))))
-
-(deftest a-test
-  (testing "Roman of 1 is 'I'"
-           (is (= (roman-of 1) "I"))))
-
-(deftest a-test
-  (testing "Roman of 2 is 'II'"
-           (is (= (roman-of 2) "II"))))
-
-(deftest a-test
-  (testing "Roman of 3 is 'III'"
-           (is (= (roman-of 3) "III"))))
+(deftest roman-of-arabic
+  (testing "Roman of arabic"
+           (is (= (roman-of 0) ""))
+           (is (= (roman-of 1) "I"))
+           (is (= (roman-of 2) "II"))
+           (is (= (roman-of 3) "III"))
+           ))
