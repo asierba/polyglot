@@ -1,28 +1,30 @@
 (ns roman-numerals.core
   (:gen-class))
 
-
+(defn rest-map [map] (dissoc map (apply max (keys map))))
+(defn get-next-key [map] (apply max (keys map)))
 
 (defn roman-of-rec [arabic, map]
   (cond
     (<= arabic 0) ""
     (contains? map arabic) (map arabic)
-    :default (cond
-               (> arabic (first (first map))) (str (roman-of-rec (first (first map)) map) (roman-of-rec (- arabic (first (first map))) map))
-               (= arabic (first (first map))) (str (roman-of-rec (first (first map)) map) (roman-of-rec (- arabic (first (first map))) (rest map)))
-;               (>= arabic 50) (str (roman-of-rec 50 map) (roman-of-rec (- arabic 50) map))
-               (>= arabic 10) (str (roman-of-rec 10 map) (roman-of-rec (- arabic 10) map))
-               (>= arabic 5) (str (roman-of-rec 5 map) (roman-of-rec (- arabic 5) map))
-               (>= arabic 1) (str (roman-of-rec 1 map) (roman-of-rec (- arabic 1) map))
-               ;:default (str (roman-of-rec 1 map) (roman-of-rec (- arabic 1) map)))
-               :default (roman-of-rec arabic (rest map)))
-    ))
+    (>= arabic (get-next-key map)) (str (roman-of-rec (get-next-key map) map) (roman-of-rec (- arabic (get-next-key map)) map))
+    :default (roman-of-rec arabic (rest-map map))))
 
 (def arabic-to-roman
   {
+    1000 "M",
+    900 "CM",
+    500 "D",
+    400 "CD",
+    100 "C",
+    90 "XC",
     50 "L",
+    40 "XL",
     10 "X",
+    9 "IX",
     5 "V",
+    4 "IV",
     1 "I",
     }
   )
