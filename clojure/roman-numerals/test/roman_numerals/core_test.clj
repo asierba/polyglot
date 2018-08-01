@@ -16,4 +16,8 @@
            (is (= (roman-of 15) "XV"))
            (is (= (roman-of 16) "XVI"))
            (is (= (roman-of 20) "XX"))
+           (is (= (roman-of 30) "XXX"))
+           (is (= (roman-of 50) "L"))
+           (is (= (roman-of 60) "LX"))
+;           (is (= (roman-of 73) "LXXIII"))
            ))
