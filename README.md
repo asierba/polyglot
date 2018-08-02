@@ -14,7 +14,7 @@ Languages
 - [ ] Javascript
 - [ ] Coffeescript
 - [X] Typescript
-- [ ] Clojure
+- [X]  Clojure
 - [ ] Lisp
 - [ ] PHP
 - [ ] Scala

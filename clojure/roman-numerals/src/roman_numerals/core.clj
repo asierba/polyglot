@@ -4,13 +4,6 @@
 (defn rest-map [map] (dissoc map (apply max (keys map))))
 (defn get-next-key [map] (apply max (keys map)))
 
-(defn roman-of-rec [arabic, map]
-  (cond
-    (<= arabic 0) ""
-    (contains? map arabic) (map arabic)
-    (>= arabic (get-next-key map)) (str (roman-of-rec (get-next-key map) map) (roman-of-rec (- arabic (get-next-key map)) map))
-    :default (roman-of-rec arabic (rest-map map))))
-
 (def arabic-to-roman
   {
     1000 "M",
@@ -29,13 +22,17 @@
     }
   )
 
-(defn roman-of [arabic]
-  (roman-of-rec arabic arabic-to-roman))
-
-(def decimal 1)
-(def roman (roman-of decimal))
+(defn roman-of
+  ([arabic] (roman-of arabic arabic-to-roman))
+  ([arabic map]
+   (cond
+     (<= arabic 0) ""
+     (contains? map arabic) (map arabic)
+     (>= arabic (get-next-key map)) (str (roman-of (get-next-key map) map) (roman-of (- arabic (get-next-key map)) map))
+     :default (roman-of arabic (rest-map map)))))
 
 (defn -main
   "Converts Arabic to Roman numeral"
   [& args]
-  (println (str "Roman of " (str decimal) ": " roman)))
+  (def arabic (read-string (read-line)))
+  (println (str "Roman of " (str arabic) ": " (roman-of arabic))))
