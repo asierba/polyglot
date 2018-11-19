@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-gradle run
+gradle run --quiet --console=plain
